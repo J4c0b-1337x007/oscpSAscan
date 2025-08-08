@@ -7,26 +7,28 @@ A focused and effective Nmap automation tool for OSCP-style enumeration.
 
 ## 🔥 Why this script?
 
-Created by **Yehonatan Sion / J4c0b_1337** to automate enumeration on **Service-Assisted (SA)** OSCP machines.  
-Fast, thorough, and gets you exactly what you need — nothing יותר, כלום פחות.
+Created by **Yehonatan Sion / J4c0b_1337** to automate service enumeration for **Service-Assisted (SA)** OSCP machines.  
+It’s fast, thorough, and gives you exactly what you need to start exploiting quickly.
 
 ---
 
 ## ⚠️ Important Note on `sudo` Permissions
 
-> **Don’t add `nmap` ל-sudoers.**  
-זה מפתה, אבל פותח חור לאבטחה. עדיף להכניס את הסיסמה בעצמך, תמיד.
+> **Don’t add `nmap` to your sudoers file.**  
+It’s tempting, but you’re just opening yourself up to unnecessary risk.  
+Enter your sudo password manually, and keep your box safe.
 
 ---
 
 ## ⚙️ Features
 
-- Full TCP port scan (fast)
+- Full fast TCP port scan
 - Merges open ports from sudo/non-sudo scans
-- Service detection on found ports
+- Service detection on discovered ports
 - UDP top 100 port scan
-- CLI *or* interactive usage
-- Clean output, auto-deletes זמני
+- Flexible CLI and interactive usage
+- Clean and organized output
+- Auto-cleans temp files
 - ASCII banner
 
 ---
@@ -50,7 +52,7 @@ python3 oscpSAscan.py
 
 ## 📂 Output
 
-All results in a folder called <SA name>:
+All results are saved in a folder named after the value you provide to -SA (the machine name):
 
 ```text
 <SA name>/
@@ -59,27 +61,27 @@ All results in a folder called <SA name>:
 ├── ip                # The target IP address (single line)
 └── UDPopenports.txt  # UDP top 100 scan (nmap format)
 ```
-*כל קבצי ביניים נמחקים אוטומטית.*
+*Temporary files are auto-deleted.*
 
 ---
 
 ## 💀 Disclaimer
 
-מיועד אך ורק ל*בדיקות מורשות* (OSCP, לקוח שאישר וכו').  
-אם תסרוק משהו בלי רשות — בעיה שלך.
+This tool is for authorized testing and training only (like the OSCP exam).  
+Do **not** use it on targets you don’t have permission to scan.
 
 ---
 
 ## 🧠 Tip
 
-השתמש עם:
+Pair this script with:
 ```bash
 gobuster
 nikto
 smbclient
 enum4linux
 ```
-ותהיה מוכן לאוסי-אס-פי, בלי שטויות.
+And you’ll be OSCP-ready.
 
 ---
 
