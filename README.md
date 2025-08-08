@@ -1,3 +1,4 @@
+
 # oscpSAscan.py
 
 A focused and effective Nmap automation tool for OSCP-style enumeration.
@@ -15,6 +16,16 @@ It merges speed and completeness, giving you exactly what you need to start expl
 
 ---
 
+### ⚠️ Important Note on `sudo` Permissions
+
+While it’s not mandatory to add `nmap` to the `/etc/sudoers` file, doing so will save you from entering your `sudo` password every time the script runs. 
+
+**However, I strongly recommend against adding it to `sudoers`**. By doing so, you might inadvertently open up vulnerabilities that could be exploited by malicious files or malware on your system, either now or in the future. It's best to use `sudo` manually to maintain a higher level of security.
+
+Ultimately, the decision is yours, but please consider the risks.
+
+---
+
 ## ⚙️ Features
 
 - Full TCP port scan (top speed)
@@ -29,19 +40,7 @@ It merges speed and completeness, giving you exactly what you need to start expl
 
 ## 🚀 Usage
 
-### 1. 📥 Add `nmap` to `/etc/sudoers` (no password required)
-
-You must allow `nmap` to be run via sudo without being prompted for a password.
-
-**Run this:**
-```bash
-echo "kali ALL=(ALL) NOPASSWD: /usr/bin/nmap" | sudo tee /etc/sudoers.d/nmap
-sudo chmod 440 /etc/sudoers.d/nmap
-```
-
----
-
-### 2. 🧠 Run the script in one of two ways:
+### 1. 🧠 Run the script in one of two ways:
 
 #### ✅ Method 1: With CLI arguments
 
